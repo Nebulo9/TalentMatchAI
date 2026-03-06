@@ -1,6 +1,9 @@
+com\talentmatch\service\MatchingService.class
 com\talentmatch\repository\MatchingResultRepository.class
+com\talentmatch\service\CandidateService.class
 com\talentmatch\model\MatchingStatus.class
 com\talentmatch\model\JobOffer.class
+com\talentmatch\service\JobOfferService.class
 com\talentmatch\repository\CandidateRepository.class
 com\talentmatch\model\MatchingResult.class
 com\talentmatch\model\Candidate.class
