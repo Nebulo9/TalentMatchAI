@@ -1,2 +1,8 @@
+com\talentmatch\repository\MatchingResultRepository.class
+com\talentmatch\model\MatchingStatus.class
+com\talentmatch\model\JobOffer.class
+com\talentmatch\repository\CandidateRepository.class
+com\talentmatch\model\MatchingResult.class
 com\talentmatch\model\Candidate.class
+com\talentmatch\repository\JobOfferRepository.class
 com\talentmatch\TalentMatchAIApplication.class
