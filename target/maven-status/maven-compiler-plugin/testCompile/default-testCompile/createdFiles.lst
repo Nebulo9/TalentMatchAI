@@ -1,0 +1,8 @@
+com/talentmatch/integration/MatchingIntegrationTest.class
+com/talentmatch/integration/JobOfferIntegrationTest.class
+com/talentmatch/integration/CandidateIntegrationTest.class
+com/talentmatch/service/CandidateServiceTest.class
+com/talentmatch/service/MatchingServiceTest.class
+com/talentmatch/controller/CandidateControllerTest.class
+com/talentmatch/controller/MatchingControllerTest.class
+com/talentmatch/service/JobOfferServiceTest.class
