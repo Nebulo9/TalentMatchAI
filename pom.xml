@@ -6,17 +6,23 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>4.0.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.talentmatch</groupId>
     <artifactId>talentmatch</artifactId>
     <version>0.0.1</version>
     <name>talentmatch</name>
-    <description>TalentMatch AI est une plateforme conçue pour faciliter la rencontre entre les talents techniques et les besoins des entreprises. Elle permet d’automatiser la création de profils à partir de données réelles (GitHub) et de fournir une analyse intelligente de l’adéquation entre un candidat et une offre d’emploi.</description>
+    <description>TalentMatch AI platform for matching technical talent with job opportunities</description>
     <properties>
         <java.version>21</java.version>
     </properties>
     <dependencies>
+
+        <!-- WEB -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
         <!-- JPA -->
         <dependency>
@@ -37,7 +43,7 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- SECURITY (Basic Auth obligatoire TP) -->
+        <!-- SECURITY -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -68,6 +74,8 @@
             <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <build>

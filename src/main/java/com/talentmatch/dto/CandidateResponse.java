@@ -1,34 +1,22 @@
 package com.talentmatch.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-
+import java.time.Instant;
 import java.util.List;
+import java.util.UUID;
 
-public class CandidateRequest {
+public class CandidateResponse {
 
-    @NotBlank
+    private UUID id;
     private String firstName;
-
-    @NotBlank
     private String lastName;
-
-    @Email
-    @NotBlank
     private String email;
-
     private String githubUsername;
-
-    @NotEmpty
     private List<String> skills;
-
-    @Min(0)
     private int yearsOfExperience;
-
     private String bio;
+    private Instant createdAt;
 
+    public UUID getId() { return id; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getEmail() { return email; }
@@ -36,7 +24,9 @@ public class CandidateRequest {
     public List<String> getSkills() { return skills; }
     public int getYearsOfExperience() { return yearsOfExperience; }
     public String getBio() { return bio; }
+    public Instant getCreatedAt() { return createdAt; }
 
+    public void setId(UUID id) { this.id = id; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
     public void setEmail(String email) { this.email = email; }
@@ -44,4 +34,5 @@ public class CandidateRequest {
     public void setSkills(List<String> skills) { this.skills = skills; }
     public void setYearsOfExperience(int yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
     public void setBio(String bio) { this.bio = bio; }
+    public void setCreatedAt(Instant createdAt) { this.createdAt = createdAt; }
 }

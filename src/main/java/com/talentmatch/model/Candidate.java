@@ -5,8 +5,6 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
-import org.apache.kafka.common.protocol.types.Field;
-import org.aspectj.weaver.ast.Not;
 
 import java.time.Instant;
 import java.util.List;
@@ -16,7 +14,7 @@ import java.util.UUID;
 public class Candidate {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @NotBlank
@@ -46,73 +44,25 @@ public class Candidate {
     private Instant createdAt;
 
     @PrePersist
-    public void prePersist(){
+    public void prePersist() {
         this.createdAt = Instant.now();
     }
 
-    // ++++ GETTERS AND SETTERS ++++
+    public UUID getId() { return id; }
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public String getEmail() { return email; }
+    public String getGithubUsername() { return githubUsername; }
+    public List<String> getSkills() { return skills; }
+    public int getYearsOfExperience() { return yearsOfExperience; }
+    public String getBio() { return bio; }
+    public Instant getCreatedAt() { return createdAt; }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getGithubUsername() {
-        return githubUsername;
-    }
-
-    public List<String> getSkills() {
-        return skills;
-    }
-
-    public int getYearsOfExperience() {
-        return yearsOfExperience;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setGithubUsername(String githubUsername) {
-        this.githubUsername = githubUsername;
-    }
-
-    public void setSkills(List<String> skills) {
-        this.skills = skills;
-    }
-
-    public void setYearsOfExperience(int yearsOfExperience) {
-        this.yearsOfExperience = yearsOfExperience;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+    public void setEmail(String email) { this.email = email; }
+    public void setGithubUsername(String githubUsername) { this.githubUsername = githubUsername; }
+    public void setSkills(List<String> skills) { this.skills = skills; }
+    public void setYearsOfExperience(int yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
+    public void setBio(String bio) { this.bio = bio; }
 }

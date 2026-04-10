@@ -1,5 +1,6 @@
 package com.talentmatch.service;
 
+import com.talentmatch.exception.NotFoundException;
 import com.talentmatch.model.JobOffer;
 import com.talentmatch.repository.JobOfferRepository;
 import org.springframework.stereotype.Service;
@@ -26,20 +27,17 @@ public class JobOfferService {
 
     public JobOffer findById(UUID id) {
         return repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("JobOffer not found"));
+                .orElseThrow(() -> new NotFoundException("JobOffer not found: " + id));
     }
 
     public JobOffer update(UUID id, JobOffer updated) {
-
         JobOffer existing = findById(id);
-
         existing.setTitle(updated.getTitle());
         existing.setCompany(updated.getCompany());
         existing.setRequiredSkills(updated.getRequiredSkills());
         existing.setDescription(updated.getDescription());
         existing.setLocation(updated.getLocation());
         existing.setSalaryRange(updated.getSalaryRange());
-
         return repository.save(existing);
     }
 
