@@ -22,7 +22,7 @@ public class JobOffer {
     private String company;
 
     @NotEmpty
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> requiredSkills;
 
     @NotBlank

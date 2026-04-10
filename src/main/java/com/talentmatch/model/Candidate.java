@@ -32,7 +32,7 @@ public class Candidate {
     private String githubUsername;
 
     @NotEmpty
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> skills;
 
     @Min(0)
